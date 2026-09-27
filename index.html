@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muu.dev | Game Developer Portfolio</title>
+  <meta name="description" content="Portfolio of Muu - Game Developer & National Finalist">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,700&family=Prompt:wght@300;400;500;600;700&family=Outfit:wght@400;600;700;800;900&family=Noto+Serif+Thai:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════
+       PAGE 1 — INTRO OVERLAY
+  ════════════════════════════════════════════════════ -->
+  <div class="intro-overlay" id="introOverlay">
+    <div class="grid-background"></div>
+    <div class="spotlight-overlay" id="introSpotlight"></div>
+    <div class="ambient-glow"></div>
+
+    <!-- Scene 1 -->
+    <div class="intro-scene" id="introScene1">
+      <span class="intro-label">CHAPTER 01</span>
+      <h1 class="intro-quote">"ผมเป็นคนที่พ่ายแพ้มาตลอด"</h1>
+      <div class="intro-bar bar-dim"></div>
+    </div>
+
+    <!-- Scene 2 -->
+    <div class="intro-scene" id="introScene2">
+      <div class="intro-badge-pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
+        NATIONAL FINALIST
+      </div>
+      <h1 class="intro-quote intro-quote-gold">"จนผลักตัวเองให้เข้าสู่รอบชิงระดับประเทศ"</h1>
+      <div class="intro-bar bar-gold"></div>
+      <p class="intro-sub">การเดินทาง ความทุ่มเท และบทพิสูจน์ที่ไม่เคยยอมแพ้</p>
+      <button class="intro-enter-btn" id="introEnterBtn">
+        เข้าสู่พอร์ตโฟลิโอ
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════
+       PAGE 2 — MAIN PORTFOLIO & SECTIONS CONTAINER
+  ════════════════════════════════════════════════════ -->
+  <div class="portfolio-page" id="portfolioPage">
+    <div class="grid-background"></div>
+    <div class="spotlight-overlay" id="mainSpotlight"></div>
+    <canvas class="fluid-field" id="fluidField" aria-hidden="true"></canvas>
+
+    <!-- Pill Navbar -->
+    <header class="navbar-wrapper">
+      <nav class="nav-pill">
+        <a href="#home" class="brand-logo" id="navLogo">Muu.dev</a>
+        <div class="nav-links">
+          <a href="#home" class="nav-link active" id="navHome">Home</a>
+          <a href="#saming" class="nav-link" id="navPortfolio">Portfolio (เสือสมิง)</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- SECTION 1: HERO STAGE (GameDev Muu + Lanyard Badge) -->
+    <div class="sections-viewport" id="sectionsViewport">
+
+      <section class="section-panel hero-section active" id="heroSection">
+        <div class="divider-rule top-rule"></div>
+
+        <main class="hero-stage">
+          <div class="stage-container">
+
+            <!-- LEFT: Texts -->
+            <div class="left-content">
+              <div class="title-group">
+                <h1 class="main-title liquid-title anim-item" style="--delay:0.1s">GameDev</h1>
+                <div class="ghost-title anim-item" style="--delay:0.3s">MUU</div>
+              </div>
+              <div class="story-lines">
+                <p class="story-line anim-item" style="--delay:0.7s">ผมเป็นคนที่ผิดหวังตลอด</p>
+                <p class="story-line anim-item" style="--delay:1.3s">และแพ้มาตลอด ไม่เคยชนะสักครั้ง</p>
+                <p class="story-line anim-item" style="--delay:1.9s">จนไม่เคยได้รับรางวัลอะไรเลย</p>
+                <p class="story-line final-line anim-item" style="--delay:2.5s">สู่คนที่ได้แข่งขันรอบชิงระดับประเทศ</p>
+              </div>
+              <div class="intro-actions anim-item" style="--delay:3.1s">
+                <button class="btn-subtle" id="btnReplayAnim">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+                  เล่นใหม่
+                </button>
+              </div>
+            </div>
+
+            <!-- RIGHT: Lanyard Badge -->
+            <div class="badge-stage" id="badgeStage">
+              <svg class="lanyard-svg" id="lanyardSvg" style="position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:1;">
+                <path id="strapShadow" class="strap-shadow" d=""/>
+                <path id="strapPath"   class="strap-ribbon" d=""/>
+              </svg>
+
+              <div class="ceiling-hook" id="ceilingHook"></div>
+
+              <div class="lanyard-card" id="lanyardCard">
+                <div class="badge-clip">
+                  <div class="clip-loop"></div>
+                  <div class="clip-metal"></div>
+                </div>
+                <div class="badge-inner">
+                  <div class="badge-header">
+                    <span class="badge-chip"></span>
+                    <span class="badge-category">OFFICIAL PASS</span>
+                    <span class="badge-status">FINALIST</span>
+                  </div>
+                  <div class="badge-photo-frame">
+                    <img src="profile.jpg" alt="Muu Profile" class="badge-photo"/>
+                    <div class="photo-glare"></div>
+                  </div>
+                  <div class="badge-details">
+                    <div class="badge-name">MUU</div>
+                    <div class="badge-role">GAME DEVELOPER</div>
+                  </div>
+                  <div class="badge-footer">
+                    <div class="barcode-lines">
+                      <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                    </div>
+                    <span class="badge-id">#TH-NAT-2026</span>
+                  </div>
+                </div>
+                <div class="drag-hint">
+                  <span>👆</span>
+                  <span>ลากเพื่อเหวี่ยงป้าย</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </main>
+
+        <div class="divider-rule bottom-rule"></div>
+        <footer class="bottom-bar">
+          <button class="scroll-down-btn" id="scrollDownBtn" aria-label="เลื่อนลงดูผลงาน">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 5v14M19 12l-7 7-7-7"/>
+            </svg>
+          </button>
+        </footer>
+      </section>
+
+      <!-- ═══════════════════════════════════════════════════
+           SECTION 2: SHOWCASE — เสือสมิง (Suea Saming)
+      ════════════════════════════════════════════════════ -->
+      <section class="section-panel saming-section section-saming" id="samingSection">
+        <!-- Atmospheric dark horror ambient glow -->
+        <div class="saming-ambient-glow"></div>
+
+        <!-- Dedicated Grid Background for Suea Saming Section -->
+        <div class="grid-background saming-grid"></div>
+
+        <!-- Persistent etched claw marks overlay in the background from user's image -->
+        <div class="saming-etched-claws" aria-hidden="true">
+          <img src="assets/claw_scratch.png" class="etched-claw-img" alt="Etched Claw Marks" />
+        </div>
+
+        <!-- Main Showcase Poster Container -->
+        <div class="saming-poster-container">
+
+          <!-- Top Header: Title "เสือสมิง" + NSC Logo -->
+          <header class="saming-poster-header reveal-item">
+            <div class="title-wrap">
+              <h1 class="saming-main-title liquid-title">เสือสมิง</h1>
+              <span class="saming-title-sub">WERE-TIGER : SURVIVAL HORROR GAME</span>
+            </div>
+
+            <div class="nsc-logo-badge" title="National Software Contest (NSC) Thailand">
+              <img src="assets/nsc_logo.png" alt="National Software Contest Logo" class="nsc-logo-img" />
+            </div>
+          </header>
+
+          <!-- Media Showcase Row: Tiger Art + Roblox Card -->
+          <div class="saming-media-grid">
+            <!-- Left: Tiger Portrait Art -->
+            <div class="saming-card saming-art-card reveal-item">
+              <div class="media-frame">
+                <img src="assets/tiger_portrait.png" alt="เสือสมิง Tiger Character Art" class="showcase-img tiger-portrait" />
+                <div class="art-corner-accent top-l"></div>
+                <div class="art-corner-accent bottom-r"></div>
+              </div>
+              <div class="card-caption">
+                <span class="caption-tag">CHARACTER ART</span>
+                <span class="caption-name">ร่างเสือสมิง</span>
+              </div>
+            </div>
+
+            <!-- Right: Roblox Game Info Card -->
+            <div class="saming-card saming-roblox-card reveal-item">
+              <div class="media-frame roblox-frame">
+                <img src="assets/roblox_game_card.png" alt="Roblox Game Stats & Screenshot: เพชฌฆาตเสือสมิง" class="showcase-img roblox-stat-img" />
+              </div>
+              <div class="card-caption">
+                <span class="caption-tag">ROBLOX PLATFORM</span>
+                <span class="caption-name">สถิติ & หน้าเกมจริง</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Description Text Boxes -->
+          <div class="saming-description-stack">
+            <!-- Card 1: Main Story & Gameplay Concept -->
+            <div class="desc-card desc-main-card reveal-item">
+              <div class="desc-badge">
+                <span class="badge-dot"></span>
+                GAMEPLAY CONCEPT & COMPETITION
+              </div>
+              <p class="desc-text">
+                <strong>เพชฌฆาตเสือสมิง</strong> เกมสยองขวัญแนว <strong>Co-Op + Survival Horror</strong> บน <strong>Roblox</strong> ได้แรงบันดาลใจจาก Dead by Daylight โดยนำตำนานพื้นบ้านไทยเรื่อง <strong>"เสือสมิง"</strong> มาออกแบบเป็นกลไกเกมที่โดดเด่น คือระบบที่เสือสมิงสามารถปลอมตัวเป็นผู้เล่นคนอื่นได้ สร้างความระแวงและความตึงเครียดให้กับผู้เล่นฝ่ายมนุษย์ตลอด ผลงานนี้เป็นการแข่งขัน <strong>National Software Contest (NSC)</strong> ระดับประเทศ และผมได้เข้ารอบ <strong>ชิงชนะเลิศ</strong> ซึ่งเป็นผลงานที่ผมภูมิใจมาก เกมพัฒนาโดยทีม 4 คน ใน Roblox Studio
+              </p>
+            </div>
+
+            <!-- Card 2: Role & Project Management -->
+            <div class="desc-card desc-sub-card reveal-item">
+              <div class="desc-badge">
+                <span class="badge-dot"></span>
+                ROLE & PROJECT IMPACT
+              </div>
+              <p class="desc-text">
+                โดยผู้ได้รับหน้าที่เป็น <strong>Project Manager</strong> แบ่งงานต่างๆ ทำให้ผลงานออกมาเสร็จภายใน <strong>3 เดือน</strong> และเกมเพชฌฆาตเสือสมิงได้มีผู้เล่นไปแล้วกว่า <strong>400 กว่าคน</strong> และมีแผนที่จะพัฒนาโปรเจกต์นี้ต่อในอนาคต
+              </p>
+            </div>
+          </div>
+
+          <!-- Showcase Footer / Navigation Actions -->
+          <div class="saming-nav-actions reveal-item">
+            <button class="saming-action-btn btn-back-top" id="btnBackToHero">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 19V5M5 12l7-7 7 7"/>
+              </svg>
+              กลับสู่หน้า GameDev
+            </button>
+            <button class="saming-action-btn btn-replay-slash" id="btnReplaySlash">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+              </svg>
+              เล่นเอฟเฟกต์กรงเล็บอีกครั้ง
+            </button>
+          </div>
+
+          <div class="saming-scroll-hint work-reveal-item">
+            <button type="button" class="saming-scroll-to-work" id="btnScrollToWork">
+              ผลงานอื่นๆ — THE WORK
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M19 12l-7 7-7-7"/></svg>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════
+             SECTION 3: THE WORK — ไพ่ 3 ใบ (แตะโชว์ผลงาน / แตะซ้ำรายละเอียด)
+        ════════════════════════════════════════════════════ -->
+        <section class="work-section" id="workSection" aria-label="The Work">
+          <div class="work-grid-bg" aria-hidden="true"></div>
+          <div class="work-sweep-layer" id="workSweepLayer" aria-hidden="true"></div>
+          <button type="button" class="work-card-switch" id="btnSwitchWorkCard" aria-label="สับเปลี่ยนตำแหน่งไพ่ที่ยังไม่เปิด" title="สลับตำแหน่งไพ่">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M16 3h5v5M4 20 21 3M21 16v5h-5M15 15l6 6M4 4l5 5" />
+            </svg>
+            <span aria-hidden="true">สลับไพ่</span>
+          </button>
+
+          <div class="work-section-inner">
+            <header class="work-header work-reveal-item">
+              <p class="work-kicker">EXPERIMENT. BUILD. LEARN.</p>
+              <h2 class="work-title liquid-title">THE WORK.</h2>
+              <p class="work-hint">เลื่อนเมาส์/นิ้วเพื่อกวาดไพ่ · กดปุ่มสลับไพ่เพื่อสับตำแหน่ง · แตะไพ่เพื่อเปิดผลงาน · แตะผลงานเพื่อดูรายละเอียด</p>
+            </header>
+
+            <div class="work-theater work-reveal-item" id="workTheater">
+              <div class="work-slots" id="workSlots">
+                <div class="work-slot" data-work-index="0">
+                  <button type="button" class="work-project" data-work-index="0" tabindex="-1" aria-hidden="true">
+                    <span class="work-card-thumb">
+                      <img src="assets/work-card-gamejam-x.png" alt="" />
+                    </span>
+                    <span class="work-card-meta">
+                      <span class="work-card-brand">HAMSTER HUB</span>
+                      <span class="work-card-index">/01</span>
+                    </span>
+                    <span class="work-card-title">Game Jam X 3 ชั่วโมง</span>
+                    <span class="work-project-hint">แตะเพื่อดูรายละเอียด</span>
+                  </button>
+                  <button type="button" class="poker-card" data-work-index="0" aria-label="เปิดผลงาน Game Jam X 3 ชั่วโมง">
+                    <span class="poker-corner poker-corner-tl"><span class="poker-rank">A</span><span class="poker-suit suit-spade">♠</span></span>
+                    <span class="poker-center suit-spade" aria-hidden="true">♠</span>
+                    <span class="poker-corner poker-corner-br"><span class="poker-rank">A</span><span class="poker-suit suit-spade">♠</span></span>
+                  </button>
+                </div>
+
+                <div class="work-slot" data-work-index="1">
+                  <button type="button" class="work-project" data-work-index="1" tabindex="-1" aria-hidden="true">
+                    <span class="work-card-thumb">
+                      <img src="assets/work-card-gamejam.png" alt="" />
+                    </span>
+                    <span class="work-card-meta">
+                      <span class="work-card-brand">HAMSTER HUB</span>
+                      <span class="work-card-index">/02</span>
+                    </span>
+                    <span class="work-card-title">Game Jam 3 ชั่วโมง</span>
+                    <span class="work-project-hint">แตะเพื่อดูรายละเอียด</span>
+                  </button>
+                  <button type="button" class="poker-card" data-work-index="1" aria-label="เปิดผลงาน Game Jam 3 ชั่วโมง">
+                    <span class="poker-corner poker-corner-tl"><span class="poker-rank">A</span><span class="poker-suit suit-heart">♥</span></span>
+                    <span class="poker-center suit-heart" aria-hidden="true">♥</span>
+                    <span class="poker-corner poker-corner-br"><span class="poker-rank">A</span><span class="poker-suit suit-heart">♥</span></span>
+                  </button>
+                </div>
+
+                <div class="work-slot" data-work-index="2">
+                  <button type="button" class="work-project" data-work-index="2" tabindex="-1" aria-hidden="true">
+                    <span class="work-card-thumb">
+                      <img src="assets/work-card-saming-3day.png" alt="" />
+                    </span>
+                    <span class="work-card-meta">
+                      <span class="work-card-brand">SAMING</span>
+                      <span class="work-card-index">/03</span>
+                    </span>
+                    <span class="work-card-title">สร้างเกมใน 3 วัน</span>
+                    <span class="work-project-hint">แตะเพื่อดูรายละเอียด</span>
+                  </button>
+                  <button type="button" class="poker-card" data-work-index="2" aria-label="เปิดผลงาน สร้างเกมใน 3 วัน">
+                    <span class="poker-corner poker-corner-tl"><span class="poker-rank">A</span><span class="poker-suit suit-diamond">♦</span></span>
+                    <span class="poker-center suit-diamond" aria-hidden="true">♦</span>
+                    <span class="poker-corner poker-corner-br"><span class="poker-rank">A</span><span class="poker-suit suit-diamond">♦</span></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="work-modal" id="workModal" role="dialog" aria-modal="true" aria-labelledby="workModalTitle" hidden>
+              <button type="button" class="work-modal-backdrop" id="workModalBackdrop" aria-label="ปิด"></button>
+              <div class="work-modal-dialog">
+                <div class="work-detail-head">
+                  <h4 class="work-detail-heading" id="workModalTitle"></h4>
+                  <button type="button" class="work-detail-close" id="workModalClose" aria-label="ปิด">×</button>
+                </div>
+                <div class="work-detail-visual" id="workModalVisual"></div>
+                <div class="work-detail-stats" id="workModalStats"></div>
+                <p class="work-detail-text" id="workModalText"></p>
+                <ul class="work-detail-tags" id="workModalTags"></ul>
+              </div>
+            </div>
+
+            <footer class="work-footer work-reveal-item">
+              <span class="work-footer-brand">MUU.DEV</span>
+              <span class="work-footer-count" id="workFooterCount">— / 03</span>
+            </footer>
+
+            <div class="work-next-action work-reveal-item" id="workNextAction" hidden>
+              <button type="button" class="work-next-button" id="btnViewNewWorks">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M5 12h14M13 6l6 6-6 6" />
+                </svg>
+                กดเพื่อดูผลงานใหม่
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <section class="new-works-page" id="newWorksPage" aria-label="ผลงานใหม่" hidden>
+          <div class="new-works-arrival" id="newWorksArrival">
+            <div class="new-works-content">
+              <div class="new-works-intro" id="newWorksIntro">
+                <p class="new-works-kicker">THE NEXT CHAPTER</p>
+                <h2>ผลงานใหม่</h2>
+                <div class="new-works-placeholder">
+                  <span class="new-works-status-dot" aria-hidden="true"></span>
+                  <p class="new-works-status">หมุนคันโยกเพื่อเปิดคลังผลงาน</p>
+                  <p class="new-works-copy">เลือกโปรเจกต์ใน Terminal เพื่อดูภาพและรายละเอียด</p>
+                </div>
+              </div>
+
+              <div class="new-works-terminal" id="newWorksTerminal" hidden>
+                <div class="terminal-topbar">
+                  <span class="terminal-window-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+                  <span class="terminal-window-title">MUU.DEV / PROJECT TERMINAL</span>
+                  <span class="terminal-window-count">03 PROJECTS</span>
+                </div>
+                <div class="terminal-body">
+                  <p class="terminal-command"><span aria-hidden="true">&gt;</span> portfolio.open --all</p>
+                  <div class="terminal-heading">
+                    <h2>คลังผลงาน</h2>
+                    <p>เลือกโปรเจกต์เพื่อเปิดดูรายละเอียด</p>
+                  </div>
+                  <div class="terminal-project-grid" id="newWorksTerminalGrid"></div>
+                  <p class="terminal-status"><span aria-hidden="true"></span> SYSTEM READY · เลือกผลงานเพื่อดำเนินการต่อ</p>
+                </div>
+              </div>
+
+              <button type="button" class="work-next-button" id="btnReturnToWorks">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M19 12H5m6 6-6-6 6-6" />
+                </svg>
+                กลับไปดูผลงานทั้งหมด
+              </button>
+            </div>
+          </div>
+          <div class="new-works-rotator">
+            <p class="new-works-rotate-prompt" id="newWorksRotatePrompt">หมุนคันโยกเพื่อพลิกหน้าให้ตรง</p>
+            <button type="button" class="new-works-lever" id="btnRotateNewWorks" aria-label="หมุนคันโยกเพื่อเปิดคลังผลงาน" aria-controls="newWorksTerminal" aria-expanded="false">
+              <span class="new-works-lever-assembly" aria-hidden="true">
+                <span class="new-works-lever-track"></span>
+                <span class="new-works-lever-pivot"></span>
+                <span class="new-works-lever-arm"><span class="new-works-lever-knob"></span></span>
+              </span>
+              <span class="new-works-lever-caption" id="newWorksLeverCaption">หมุนคันโยก</span>
+            </button>
+          </div>
+        </section>
+
+        <section class="contact-section" id="contactSection" aria-label="ติดต่อ">
+          <div class="contact-marquee" aria-hidden="true">KEEP MAKING — KEEP LEARNING — KEEP MAKING —</div>
+          <span class="contact-orbit" aria-hidden="true"></span>
+          <div class="contact-shell">
+            <div class="contact-topline contact-reveal">
+              <p class="contact-kicker">06 / LET’S CONNECT</p>
+              <span class="contact-next">THE NEXT CHAPTER <span aria-hidden="true">↗</span></span>
+            </div>
+
+            <div class="contact-main contact-reveal">
+              <p class="contact-eyebrow">OPEN TO NEW IDEAS & COLLABORATIONS</p>
+              <h2 class="contact-title"><span class="liquid-title">LET’S MAKE</span><span class="contact-title-outline">SOMETHING.</span></h2>
+            </div>
+
+            <div class="contact-bottom contact-reveal">
+              <p class="contact-note">มีไอเดียหรืออยากร่วมงานกันไหม? ทักมาได้เลย</p>
+              <div class="contact-links">
+                <a class="contact-link" href="https://www.instagram.com/muugropmakmak/" target="_blank" rel="noopener noreferrer" aria-label="Instagram muugropmakmak">
+                  <span class="contact-link-label">INSTAGRAM</span>
+                  <span class="contact-link-value">@muugropmakmak</span>
+                  <span class="contact-link-arrow" aria-hidden="true">↗</span>
+                </a>
+                <a class="contact-link" href="mailto:suphkr286@gmail.com" aria-label="ส่งอีเมลถึง suphkr286@gmail.com">
+                  <span class="contact-link-label">EMAIL</span>
+                  <span class="contact-link-value">suphkr286@gmail.com</span>
+                  <span class="contact-link-arrow" aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════
+         CIRCLE EXPANSION TRANSITION OVERLAY
+    ════════════════════════════════════════════════════ -->
+    <div class="circle-transition-overlay" id="circleTransition">
+      <div class="circle-expansion-disk" id="circleDisk"></div>
+    </div>
+
+    <!-- ═══════════════════════════════════════════════════
+         TIGER CLAW SLASH OVERLAY
+    ════════════════════════════════════════════════════ -->
+    <div class="claw-slash-overlay" id="clawSlashOverlay">
+      <!-- Flash of bloody crimson / white fury -->
+      <div class="slash-flash" id="slashFlash"></div>
+
+      <!-- Animated 3 slash light beams slicing diagonally down -->
+      <div class="slash-streaks" id="slashStreaks">
+        <div class="slash-streak streak-1"></div>
+        <div class="slash-streak streak-2"></div>
+        <div class="slash-streak streak-3"></div>
+      </div>
+
+      <!-- Tiger Claw Gouges from uploaded user image tearing down -->
+      <div class="claw-scratch-stage" id="clawScratchStage">
+        <img src="assets/claw_scratch.png" class="claw-scratch-img" id="clawScratchImg" alt="Tiger Claw Scratch" />
+      </div>
+
+        <!-- Slash Sparks & Embers -->
+        <div class="slash-sparks" id="slashSparks">
+          <span class="spark sp-1"></span>
+          <span class="spark sp-2"></span>
+          <span class="spark sp-3"></span>
+          <span class="spark sp-4"></span>
+          <span class="spark sp-5"></span>
+          <span class="spark sp-6"></span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
